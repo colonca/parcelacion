@@ -8,6 +8,7 @@ class NuevaParcelacion extends StatefulWidget {
   final int materia;
 
 
+
   NuevaParcelacion({Key key,@required this.corte, @required this.materia}) : super(key:key);
 
   @override
