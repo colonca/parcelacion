@@ -18,7 +18,7 @@ class _NuevaMateriaFormState extends State<NuevaMateriaForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('nueva materia'),
+        title: Text('Nueva - Materia'),
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 10.0,vertical: 20.0),
@@ -27,10 +27,9 @@ class _NuevaMateriaFormState extends State<NuevaMateriaForm> {
             textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20.0),
+                borderRadius: BorderRadius.circular(10.0),
               ),
-              hintText: 'codigo de la asignatura',
-              icon: Icon(Icons.account_balance_wallet_rounded)
+              hintText: 'codigo',
             ),
             onChanged: (value){
               setState(() {
@@ -43,10 +42,9 @@ class _NuevaMateriaFormState extends State<NuevaMateriaForm> {
             textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20.0),
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
-                hintText: 'Nombre de la asignatura',
-                icon: Icon(Icons.account_balance_wallet_rounded)
+                hintText: 'Nombre',
             ),
             onChanged: (value){
               setState(() {
@@ -54,8 +52,9 @@ class _NuevaMateriaFormState extends State<NuevaMateriaForm> {
               });
             },
           ),
+          SizedBox(height: 50.0),
           FlatButton(
-            color: Colors.blue,
+            color: Colors.green,
             textColor: Colors.white,
             disabledColor: Colors.grey,
             disabledTextColor: Colors.black,

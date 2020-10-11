@@ -25,7 +25,7 @@ class _NuevaParcelacionState extends State<NuevaParcelacion> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Nueva Parcelacion'),
+        title: Text('Actividad'),
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 10.0,vertical: 20.0),
@@ -34,10 +34,10 @@ class _NuevaParcelacionState extends State<NuevaParcelacion> {
             textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20.0),
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
-                hintText: 'Nombre de la Parcelación',
-                icon: Icon(Icons.account_balance_wallet_rounded)
+                hintText: 'Nombre de la Actividad',
+
             ),
             onChanged: (value){
               setState(() {
@@ -50,10 +50,9 @@ class _NuevaParcelacionState extends State<NuevaParcelacion> {
             textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20.0),
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
                 hintText: 'Porcentaje',
-                icon: Icon(Icons.account_balance_wallet_rounded)
             ),
             onChanged: (value){
               setState(() {
@@ -67,10 +66,10 @@ class _NuevaParcelacionState extends State<NuevaParcelacion> {
             textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20.0),
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
                 hintText: 'Nota',
-                icon: Icon(Icons.account_balance_wallet_rounded)
+
             ),
             onChanged: (value){
               setState(() {
@@ -80,7 +79,7 @@ class _NuevaParcelacionState extends State<NuevaParcelacion> {
           ),
           SizedBox(height: 20.0),
           FlatButton(
-            color: Colors.blue,
+            color: Colors.green,
             textColor: Colors.white,
             disabledColor: Colors.grey,
             disabledTextColor: Colors.black,
@@ -104,7 +103,7 @@ class _NuevaParcelacionState extends State<NuevaParcelacion> {
                }
             },
             child: Text(
-              "Guardar Parcelacion",
+              "Guardar Actividad",
               style: TextStyle(fontSize: 20.0),
             ),
           )

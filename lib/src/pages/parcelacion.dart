@@ -17,7 +17,7 @@ class ParcelacionPage extends StatelessWidget {
         title: FutureBuilder(
               future: CorteProvider().getCorte(this.corte),
               builder: (context, snapshot) {
-                         return Text(snapshot.hasData ? snapshot.data.nombre : '');
+                         return Text(snapshot.hasData ? 'corte #' + snapshot.data.id.toString() : '');
                       },
         ),
         actions: [
@@ -52,11 +52,6 @@ class ParcelacionPage extends StatelessWidget {
                                child: Row(
                                  crossAxisAlignment: CrossAxisAlignment.start,
                                  children: [
-                                   Container(
-                                     height: 120,
-                                     width: 8,
-                                     color: Colors.blue,
-                                   ),
                                    Padding(
                                      padding: const EdgeInsets.only(left : 8.0),
                                      child: Column(

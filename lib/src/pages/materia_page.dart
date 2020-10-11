@@ -27,36 +27,24 @@ class MateriaPage extends StatelessWidget {
           initialData: [],
           builder: (context, AsyncSnapshot<List> snapshot) {
             final data = snapshot.hasData ? snapshot.data : [];
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: data.map((e){
-                    return InkWell(
-                      child: Container(
-                        width: size.width*0.3,
-                        height: size.height*0.3,
-                        color: Colors.red,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Center(child: Text(e.nombre),),
-                            SizedBox(height: 20,),
-                            Center(child: FutureBuilder(
-                              future: ParcelacionProvider().getNotaPorCorte(e.id, this.id),
-                              builder: (context, AsyncSnapshot<double> snapshot) {
-                                 return Text(snapshot.data.toStringAsFixed(2));
-                              },
-                            ),),
-                          ],
-                        ),
-                      ),
-                      onTap: (){
-                        Navigator.of(context).push(
-                          MaterialPageRoute(builder: (_) => ParcelacionPage(corte: e.id,materia: this.id))
-                        );
-                      },
-                    );
-                }).toList(),
-              );
+            return ListView(
+              children: data.map((element) {
+                  return FutureBuilder(
+                    future: ParcelacionProvider().getNotaPorCorte(element.id, this.id),
+                    builder: (context, AsyncSnapshot<double> snapshot) {
+                      return ListTile(
+                        title: Text('${element.nombre} Nota: ${snapshot.data.toStringAsFixed(1)}'),
+                        leading: Icon(Icons.ac_unit),
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder: (_) => ParcelacionPage(corte: element.id, materia: this.id))
+                          );
+                        },
+                      );
+                    },
+                  );
+              }).toList(),
+            );
           },
         )
       ),
