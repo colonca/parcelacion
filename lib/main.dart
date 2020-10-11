@@ -9,7 +9,7 @@ class Parcelacion  extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          primaryColor: Colors.green
+          primaryColor: Colors.pink
       ),
       debugShowCheckedModeBanner: false,
       home:HomePage(),

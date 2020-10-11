@@ -32,14 +32,20 @@ class MateriaPage extends StatelessWidget {
                   return FutureBuilder(
                     future: ParcelacionProvider().getNotaPorCorte(element.id, this.id),
                     builder: (context, AsyncSnapshot<double> snapshot) {
-                      return ListTile(
-                        title: Text('${element.nombre} Nota: ${snapshot.data.toStringAsFixed(1)}'),
-                        leading: Icon(Icons.ac_unit),
-                        onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(builder: (_) => ParcelacionPage(corte: element.id, materia: this.id))
-                          );
-                        },
+                      return Column(
+                        children: [
+                          ListTile(
+                            title: Text('${element.nombre}'),
+                            subtitle: Text('${snapshot.data.toStringAsFixed(1)}'),
+                            leading: Icon(Icons.arrow_forward),
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(builder: (_) => ParcelacionPage(corte: element.id, materia: this.id))
+                              );
+                            },
+                          ),
+                          Divider(color: Colors.pink,)
+                        ],
                       );
                     },
                   );

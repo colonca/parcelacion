@@ -9,7 +9,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title: Text('NotaApp'),
+        title: Text('Yorkana'),
+        centerTitle: true,
         actions: [
           IconButton(
             icon: Icon(Icons.add),
@@ -32,15 +33,22 @@ class HomePage extends StatelessWidget {
               return FutureBuilder(
                 future: ParcelacionProvider().getDefinitiva(e.id),
                 builder: (context, AsyncSnapshot<double>snapshot) {
-                  return ListTile(
-                    title: Text('${e.nombre} Def: ${snapshot.data.toStringAsFixed(2)}'),
-                    onTap: (){
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (_) => MateriaPage(id: e.id,)
-                        )
-                      );
-                    },
+                  return Column(
+                    children: [
+                      ListTile(
+                        title: Text('${e.nombre} '),
+                        leading: Icon(Icons.arrow_forward),
+                        trailing: Text('${snapshot.data.toStringAsFixed(2)}'),
+                        onTap: (){
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => MateriaPage(id: e.id,)
+                            )
+                          );
+                        },
+                      ),
+                      Divider(color: Colors.pink,)
+                    ],
                   );
                 },
               );

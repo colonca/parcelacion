@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:parcelacion/src/pages/materia_page.dart';
 import 'package:parcelacion/src/pages/parcelacion.dart';
 import 'package:parcelacion/src/providers/parcelacion_provider.dart';
 
@@ -25,7 +24,7 @@ class _NuevaParcelacionState extends State<NuevaParcelacion> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Actividad'),
+        title: Text('Nueva'),
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 10.0,vertical: 20.0),
@@ -33,11 +32,7 @@ class _NuevaParcelacionState extends State<NuevaParcelacion> {
           TextField(
             textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                hintText: 'Nombre de la Actividad',
-
+                hintText: 'Actividad',
             ),
             onChanged: (value){
               setState(() {
@@ -49,9 +44,6 @@ class _NuevaParcelacionState extends State<NuevaParcelacion> {
           TextField(
             textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
                 hintText: 'Porcentaje',
             ),
             onChanged: (value){
@@ -65,11 +57,7 @@ class _NuevaParcelacionState extends State<NuevaParcelacion> {
           TextField(
             textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                hintText: 'Nota',
-
+                 hintText: 'Nota',
             ),
             onChanged: (value){
               setState(() {
@@ -79,11 +67,11 @@ class _NuevaParcelacionState extends State<NuevaParcelacion> {
           ),
           SizedBox(height: 20.0),
           FlatButton(
-            color: Colors.green,
+            color: Colors.pink,
             textColor: Colors.white,
             disabledColor: Colors.grey,
             disabledTextColor: Colors.black,
-            padding: EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(20.0),
             splashColor: Colors.blueAccent,
             onPressed: () async{
                 print(this.nota);
@@ -103,7 +91,7 @@ class _NuevaParcelacionState extends State<NuevaParcelacion> {
                }
             },
             child: Text(
-              "Guardar Actividad",
+              "Guardar",
               style: TextStyle(fontSize: 20.0),
             ),
           )
